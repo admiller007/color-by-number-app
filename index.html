@@ -14,7 +14,7 @@
   <h1>Color By Number Generator</h1>
   <p>Upload an image to generate a line-drawing coloring page and a color-by-number legend.</p>
 
-  <form id="uploadForm" method="POST" enctype="multipart/form-data" action="/generate">
+  <form id="uploadForm" method="POST" enctype="multipart/form-data" action="https://color-by-number-app.onrender.com/generate">
     <input type="file" name="image" accept="image/*" required>
     <br>
     <button type="submit">Generate</button>
@@ -22,12 +22,12 @@
 
   <div id="result">
     <h2>Coloring Page</h2>
-    <img src="output/color_by_number_result.png" alt="Generated Coloring Page">
+    <img src="https://color-by-number-app.onrender.com/output/color_by_number_result.png" alt="Generated Coloring Page">
   </div>
 
   <div id="legend">
     <h2>Color Key</h2>
-    <img src="output/color_legend.png" alt="Color Legend">
+    <img src="https://color-by-number-app.onrender.com/output/color_legend.png" alt="Color Legend">
   </div>
 
   <footer style="margin-top: 40px; font-size: 0.9em; color: #555;">
