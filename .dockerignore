@@ -1,0 +1,15 @@
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.log
+*.ipynb
+.env
+.git/
+.gitignore
+datasets/
+checkpoints/
+outputs/
+*.mp4
+*.jpg
+*.png
