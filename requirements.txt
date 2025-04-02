@@ -1,7 +1,7 @@
-flask
+flask==2.3.3
 torch==2.1.2
-torchvision
-numpy<2
-opencv-python-headless
-Pillow
-scikit-image
+torchvision==0.16.2
+numpy==1.26.4
+opencv-python-headless==4.9.0.80
+Pillow==10.2.0
+scikit-image==0.22.0
