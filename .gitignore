@@ -1,0 +1,4 @@
+sam_vit_b.pth
+*.pth
+*.pt
+__pycache__/
