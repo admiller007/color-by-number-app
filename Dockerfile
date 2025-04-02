@@ -1,24 +1,36 @@
-# Use Python 3.10 (safer for many ML libraries)
+# Use a slim base image
 FROM python:3.10-slim
 
-# Set the working directory
+# Set working directory
 WORKDIR /app
 
-# Install system dependencies
-RUN apt-get update && apt-get install -y git && rm -rf /var/lib/apt/lists/*
+# Install system-level dependencies
+RUN apt-get update && apt-get install -y \
+    git \
+    ffmpeg \
+    libgl1 \
+    libglib2.0-0 \
+    build-essential \
+    python3-dev \
+    && apt-get clean \
+    && rm -rf /var/lib/apt/lists/*
 
-# Copy requirements and install them
+# Upgrade pip and install Python packages
 COPY requirements.txt .
 RUN pip install --upgrade pip \
- && pip install -r requirements.txt \
- && pip install 'git+https://github.com/facebookresearch/detectron2.git'
+ && pip install --no-cache-dir -r requirements.txt \
+ && pip install --no-cache-dir 'git+https://github.com/facebookresearch/detectron2.git'
 
-# Copy rest of the app
+# Copy your app code
 COPY . .
 
-# Set environment port
-ENV PORT=10000
+# Set environment variables
+ENV PORT=10000 \
+    PYTHONUNBUFFERED=1 \
+    PYTHONDONTWRITEBYTECODE=1
+
+# Expose port for external access
 EXPOSE 10000
 
-# Run the app
+# Run the app (adjust based on framework)
 CMD ["python", "app.py"]
