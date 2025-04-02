@@ -1,14 +1,8 @@
-# Core dependencies
 flask
 opencv-python-headless
 numpy
 Pillow
 requests
 gdown
-
-# Torch must come BEFORE detectron2
 torch==2.1.0
-
-# Facebook AI Research models
 segment-anything @ git+https://github.com/facebookresearch/segment-anything.git
-detectron2 @ git+https://github.com/facebookresearch/detectron2.git
